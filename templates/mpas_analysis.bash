@@ -31,6 +31,8 @@ ensoY1="{{ '%04d' % (enso_year1) }}"
 ensoY2="{{ '%04d' % (enso_year2) }}"
 climY1="{{ '%04d' % (climo_year1) }}"
 climY2="{{ '%04d' % (climo_year2) }}"
+RefYr_START="{{ '%04d' % (anomaly_year) }}"
+
 
 # Job identifier
 identifier=ts_${tsY1}-${tsY2}_climo_${climY1}-${climY2}
@@ -250,6 +252,8 @@ generate = {{ generate }}
 startYear = ${climY1}
 # the last year over which to average climatalogies
 endYear = ${climY2}
+##the reference year for anomaly
+anomalyRefYear = ${RefYr_START}
 
 [timeSeries]
 ## options related to producing time series plots, often to compare against
@@ -260,6 +264,8 @@ endYear = ${climY2}
 #   of years, and is a good way of insuring that all values are used.
 startYear = ${tsY1}
 endYear = ${tsY2}
+##the reference year for anomaly
+anomalyRefYear = ${RefYr_START}
 
 [index]
 ## options related to producing nino index.

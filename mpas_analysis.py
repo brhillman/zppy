@@ -44,6 +44,11 @@ def mpas_analysis(config, scriptDir):
         else:
             enso_year_sets = ts_year_sets
 
+        if c['anomalyRefYear'] != [""]:
+            c['anomaly_year'] = int(c['anomalyRefYear'][0])
+        else:
+            c['anomaly_year'] = 1
+
         for s, rs, es in zip(ts_year_sets, climo_year_sets, enso_year_sets):
 
             c['ts_year1'] = s[0]

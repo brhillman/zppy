@@ -44,7 +44,7 @@ def amwg(config, scriptDir):
                 f.write(template.render( **c ))
 
             # List of dependencies
-            dependencies = [ os.path.join(scriptDir, 'climo_%s_%04d-%04d.status' % (c['grid'],c['year1'],c['year2'])), ]
+            dependencies = [ os.path.join(scriptDir, 'climo_atm_monthly_%s_%04d-%04d.status' % (sub,c['year1'],c['year2'])), ]
 
             # Submit job
             jobid = submitScript(scriptFile, dependFiles=dependencies, export='NONE')
